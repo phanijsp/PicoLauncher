@@ -24,6 +24,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import soup.neumorphism.NeumorphCardView;
@@ -96,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 				i.addCategory(Intent.CATEGORY_LAUNCHER);
 				List<ResolveInfo> availableActivities = packageManager.queryIntentActivities(i, 0);
 				for (ResolveInfo resolveInfo : availableActivities) {
-					System.out.println(resolveInfo.loadLabel(packageManager) + " " + resolveInfo.activityInfo.packageName);
 					appData_ArrayList.add(new AppData(resolveInfo.loadLabel(packageManager).toString(), resolveInfo.activityInfo.packageName, resolveInfo.loadIcon(packageManager)));
 				}
 			}
@@ -119,16 +119,43 @@ public class MainActivity extends AppCompatActivity {
 			public void afterTextChanged(Editable s) {
 				filtered_List = new ArrayList<>();
 				if (s.toString().trim().length() >= 1) {
-					for (AppData app : apps) {
-						if (app.getLabel().toLowerCase().trim().contains(s.toString().toLowerCase().trim())) {
-							filtered_List.add(app);
+					if (s.toString().trim().length() == 1) {
+						for (AppData app : apps) {
+							if (app.getLabel().toLowerCase().trim().startsWith(s.toString().toLowerCase().trim())) {
+								filtered_List.add(app);
+							}
+						}
+					} else {
+						for (AppData app : apps) {
+							if (app.getLabel().toLowerCase().trim().contains(s.toString().toLowerCase().trim())) {
+								filtered_List.add(app);
+							}
 						}
 					}
+
 				}
+				sort_filtered_List();
 				adapter = new appList_Adapter(getApplicationContext(), filtered_List);
 				listView.setAdapter(adapter);
 			}
 		});
+	}
+
+	public void sort_filtered_List() {
+		if (filtered_List != null && filtered_List.size() > 0) {
+			for (int i = 0; i < filtered_List.size(); i++) {
+				for (int j = i + 1; j < filtered_List.size(); j++) {
+					if (filtered_List.get(i).getLabel().compareTo(filtered_List.get(j).getLabel()) > 0) {
+						AppData temp = filtered_List.get(i);
+						filtered_List.set(i, filtered_List.get(j));
+						filtered_List.set(j, temp);
+					}
+				}
+			}
+			Collections.reverse(filtered_List);
+		}
+
+
 	}
 
 	public void hideKeyboard() {
