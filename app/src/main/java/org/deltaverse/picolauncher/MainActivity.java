@@ -43,11 +43,12 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTheme(R.style.DefaultTheme);
 		setContentView(R.layout.activity_main);
 
-		Window w = getWindow();
-		w.setStatusBarColor(ContextCompat.getColor(this, R.color.default_background));
-		w.setNavigationBarColor(ContextCompat.getColor(this, R.color.default_background));
+//		Window w = getWindow();
+//		w.setStatusBarColor(ContextCompat.getColor(this, R.color.default_background));
+//		w.setNavigationBarColor(ContextCompat.getColor(this, R.color.default_background));
 
 		apps = getUpdatedList();
 		filtered_List = new ArrayList<>();

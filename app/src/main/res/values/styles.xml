@@ -8,5 +8,29 @@
         <item name="android:windowBackground">#000</item>
     </style>
 
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#000</item>
+        <item name="stylized_text_visible">false</item>
+        <item name="neu_light_color">#1a1a1a</item>
+        <item name="neu_dark_color">#0d0d0d</item>
+        <item name="background_color">#121212</item>
+    </style>
 
+    <style name="ThemeRed" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#fc082b</item>
+        <item name="stylized_text_visible">false</item>
+        <item name="neu_light_color">#fd3553</item>
+        <item name="neu_dark_color">#e30224</item>
+        <item name="background_color">#fc082b</item>
+        <item name="android:statusBarColor">#fc082b</item>
+        <item name="android:navigationBarColor">#fc082b</item>
+    </style>
 </resources>
