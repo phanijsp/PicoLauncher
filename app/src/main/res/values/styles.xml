@@ -33,4 +33,18 @@
         <item name="android:statusBarColor">#fc082b</item>
         <item name="android:navigationBarColor">#fc082b</item>
     </style>
+
+    <style name="ThemeBlue" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#33bbff</item>
+        <item name="stylized_text_visible">false</item>
+        <item name="neu_light_color">#66ccff</item>
+        <item name="neu_dark_color">#00aaff</item>
+        <item name="background_color">#33bbff</item>
+        <item name="android:statusBarColor">#33bbff</item>
+        <item name="android:navigationBarColor">#33bbff</item>
+    </style>
 </resources>

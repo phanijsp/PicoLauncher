@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,7 @@ import java.util.List;
 import soup.neumorphism.NeumorphCardView;
 
 public class MainActivity extends AppCompatActivity {
+	ImageView stylized_text;
 	ConstraintLayout root_layout;
 	NeumorphCardView neumorphCardView;
 	ConstraintLayout.LayoutParams params;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(R.style.DefaultTheme);
+		setTheme(R.style.ThemeBlue);
 		setContentView(R.layout.activity_main);
 
 //		Window w = getWindow();
@@ -56,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 		neumorphCardView = findViewById(R.id.neu);
 		editText = findViewById(R.id.edit_text);
 		listView = findViewById(R.id.apps_listview);
+		stylized_text = findViewById(R.id.stylized_text);
+
+
+
 
 		editTextTouchHandler();
 		editTextHandler();
