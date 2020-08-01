@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 		root_layout.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View v) {
-				Toast.makeText(getApplicationContext(),"KK",Toast.LENGTH_SHORT).show();
 				startActivity(new Intent(MainActivity.this, ThemeActivity.class));
 				return false;
 			}
