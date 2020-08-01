@@ -13,11 +13,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/default_background</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">#000</item>
-        <item name="stylized_text_visible">false</item>
+        <item name="android:windowBackground">#121212</item>
         <item name="neu_light_color">#1a1a1a</item>
         <item name="neu_dark_color">#0d0d0d</item>
         <item name="background_color">#121212</item>
+        <item name="android:statusBarColor">#121212</item>
+        <item name="android:navigationBarColor">#121212</item>
     </style>
 
     <style name="ThemeRed" parent="Theme.AppCompat.Light.NoActionBar">
@@ -26,7 +27,6 @@
         <item name="colorPrimaryDark">@color/default_background</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">#fc082b</item>
-        <item name="stylized_text_visible">false</item>
         <item name="neu_light_color">#fd3553</item>
         <item name="neu_dark_color">#e30224</item>
         <item name="background_color">#fc082b</item>
@@ -34,17 +34,164 @@
         <item name="android:navigationBarColor">#fc082b</item>
     </style>
 
+    <style name="customTheme_1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#00cc00</item>
+        <item name="neu_light_color">#00ff00</item>
+        <item name="neu_dark_color">#009900</item>
+        <item name="background_color">#00cc00</item>
+        <item name="android:statusBarColor">#00cc00</item>
+        <item name="android:navigationBarColor">#00cc00</item>
+    </style>
+
+    <style name="customTheme_2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#3399ff</item>
+        <item name="neu_light_color">#66b3ff</item>
+        <item name="neu_dark_color">#0080ff</item>
+        <item name="background_color">#3399ff</item>
+        <item name="android:statusBarColor">#3399ff</item>
+        <item name="android:navigationBarColor">#3399ff</item>
+    </style>
+
+    <style name="customTheme_3" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#cc33ff</item>
+        <item name="neu_light_color">#d966ff</item>
+        <item name="neu_dark_color">#bf00ff</item>
+        <item name="background_color">#cc33ff</item>
+        <item name="android:statusBarColor">#cc33ff</item>
+        <item name="android:navigationBarColor">#cc33ff</item>
+    </style>
+    <style name="customTheme_4" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ff3399</item>
+        <item name="neu_light_color">#ff66b3</item>
+        <item name="neu_dark_color">#ff0080</item>
+        <item name="background_color">#ff3399</item>
+        <item name="android:statusBarColor">#ff3399</item>
+        <item name="android:navigationBarColor">#ff3399</item>
+    </style>
+    <style name="customTheme_5" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ff9999</item>
+        <item name="neu_light_color">#ffcccc</item>
+        <item name="neu_dark_color">#ff6666</item>
+        <item name="background_color">#ff9999</item>
+        <item name="android:statusBarColor">#ff9999</item>
+        <item name="android:navigationBarColor">#ff9999</item>
+    </style>
+
+    <style name="customTheme_6" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ccccff</item>
+        <item name="neu_light_color">#ffffff</item>
+        <item name="neu_dark_color">#9999ff</item>
+        <item name="background_color">#ccccff</item>
+        <item name="android:statusBarColor">#ccccff</item>
+        <item name="android:navigationBarColor">#ccccff</item>
+    </style>
+
+    <style name="customTheme_7" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ccff99</item>
+        <item name="neu_light_color">#e6ffcc</item>
+        <item name="neu_dark_color">#b3ff66</item>
+        <item name="background_color">#ccff99</item>
+        <item name="android:statusBarColor">#ccff99</item>
+        <item name="android:navigationBarColor">#ccff99</item>
+    </style>
+
+    <style name="customTheme_8" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ff6600</item>
+        <item name="neu_light_color">#ff8533</item>
+        <item name="neu_dark_color">#cc5200</item>
+        <item name="background_color">#ff6600</item>
+        <item name="android:statusBarColor">#ff6600</item>
+        <item name="android:navigationBarColor">#ff6600</item>
+    </style>
+
+
+    <style name="customTheme_9" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#99ff66</item>
+        <item name="neu_light_color">#bbff99</item>
+        <item name="neu_dark_color">#77ff33</item>
+        <item name="background_color">#99ff66</item>
+        <item name="android:statusBarColor">#99ff66</item>
+        <item name="android:navigationBarColor">#99ff66</item>
+    </style>
+
+
+    <style name="customTheme_10" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#ffcc66</item>
+        <item name="neu_light_color">#ffdd99</item>
+        <item name="neu_dark_color">#ffbb33</item>
+        <item name="background_color">#ffcc66</item>
+        <item name="android:statusBarColor">#ffcc66</item>
+        <item name="android:navigationBarColor">#ffcc66</item>
+    </style>
+
+
+    <style name="customTheme_11" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/default_background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">#99cc00</item>
+        <item name="neu_light_color">#bfff00</item>
+        <item name="neu_dark_color">#739900</item>
+        <item name="background_color">#99cc00</item>
+        <item name="android:statusBarColor">#99cc00</item>
+        <item name="android:navigationBarColor">#99cc00</item>
+    </style>
+
+
+
+
     <style name="ThemeBlue" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/default_background</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">#33bbff</item>
-        <item name="stylized_text_visible">false</item>
         <item name="neu_light_color">#66ccff</item>
         <item name="neu_dark_color">#00aaff</item>
         <item name="background_color">#33bbff</item>
         <item name="android:statusBarColor">#33bbff</item>
         <item name="android:navigationBarColor">#33bbff</item>
     </style>
+
 </resources>

@@ -13,16 +13,14 @@ import android.text.TextWatcher;
 import android.transition.TransitionManager;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +29,6 @@ import java.util.List;
 import soup.neumorphism.NeumorphCardView;
 
 public class MainActivity extends AppCompatActivity {
-	ImageView stylized_text;
 	ConstraintLayout root_layout;
 	NeumorphCardView neumorphCardView;
 	ConstraintLayout.LayoutParams params;
@@ -41,11 +38,14 @@ public class MainActivity extends AppCompatActivity {
 	ArrayList<AppData> filtered_List;
 	ListView listView;
 	appList_Adapter adapter;
+	ThemeUtils themeUtils;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTheme(R.style.ThemeBlue);
+
+		themeUtils = new ThemeUtils(getApplicationContext());
+		setTheme(themeUtils.getTheme());
 		setContentView(R.layout.activity_main);
 
 //		Window w = getWindow();
@@ -58,14 +58,22 @@ public class MainActivity extends AppCompatActivity {
 		neumorphCardView = findViewById(R.id.neu);
 		editText = findViewById(R.id.edit_text);
 		listView = findViewById(R.id.apps_listview);
-		stylized_text = findViewById(R.id.stylized_text);
-
-
 
 
 		editTextTouchHandler();
 		editTextHandler();
 		listItemClickHandler();
+		root_layout_long_clickHandler();
+	}
+	public void root_layout_long_clickHandler(){
+		root_layout.setOnLongClickListener(new View.OnLongClickListener() {
+			@Override
+			public boolean onLongClick(View v) {
+				Toast.makeText(getApplicationContext(),"KK",Toast.LENGTH_SHORT).show();
+				startActivity(new Intent(MainActivity.this, ThemeActivity.class));
+				return false;
+			}
+		});
 	}
 
 	public void listItemClickHandler() {
@@ -183,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onResume() {
+		setTheme(themeUtils.getTheme());
 		params = (ConstraintLayout.LayoutParams) neumorphCardView.getLayoutParams();
 		TransitionManager.beginDelayedTransition(root_layout);
 		Handler handler = new Handler();

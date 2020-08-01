@@ -9,18 +9,7 @@
     android:background="?attr/background_color"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/stylized_text"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/neu"
-        android:layout_margin="0dp"
-        android:padding="0dp"
-        android:visibility="?attr/stylized_text_visible"
-        android:src="@drawable/hustle"
-        tools:ignore="ContentDescription" />
+
 <soup.neumorphism.NeumorphCardView
     android:id="@+id/neu"
     android:layout_margin="36dp"
@@ -70,10 +59,10 @@
     <ListView
         android:id="@+id/apps_listview"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:stackFromBottom="true"
+        android:divider="@null"
         app:layout_constraintBottom_toTopOf="@id/neu"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="@id/neu"
         app:layout_constraintEnd_toEndOf="@id/neu"
         />
