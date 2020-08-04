@@ -1,7 +1,15 @@
 package org.deltaverse.picolauncher;
 
+import android.annotation.SuppressLint;
+import android.app.WallpaperManager;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.widget.Toast;
+
+import androidx.annotation.StyleableRes;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,11 +34,31 @@ public class ThemeUtils {
 	private int CustomTheme_9 = R.style.customTheme_9;
 	private int CustomTheme_10 = R.style.customTheme_10;
 	private int CustomTheme_11 = R.style.customTheme_11;
+	private int CustomTheme_12 = R.style.customTheme_12;
+	private int CustomTheme_13 = R.style.customTheme_13;
+	private int CustomTheme_14 = R.style.customTheme_14;
+	private int CustomTheme_15 = R.style.customTheme_15;
+	private int CustomTheme_16 = R.style.customTheme_16;
+	private int CustomTheme_17 = R.style.customTheme_17;
+	private int CustomTheme_18 = R.style.customTheme_18;
 	private int[] themes = {ThemeDefault, ThemeRed, ThemeBlue,
 			CustomTheme_1, CustomTheme_2, CustomTheme_3,
 			CustomTheme_4, CustomTheme_5, CustomTheme_6,
 			CustomTheme_7, CustomTheme_8, CustomTheme_9,
-			CustomTheme_10, CustomTheme_11};
+			CustomTheme_10, CustomTheme_11, CustomTheme_12,
+			CustomTheme_13, CustomTheme_14, CustomTheme_15,
+			CustomTheme_16, CustomTheme_17, CustomTheme_18};
+
+	int[] attrs = {R.attr.colorPrimary,
+			R.attr.colorPrimaryDark,
+			R.color.colorAccent,
+			android.R.attr.windowBackground,
+			R.attr.neu_light_color,
+			R.attr.neu_dark_color,
+			R.attr.background_color,
+			android.R.attr.statusBarColor,
+			android.R.attr.navigationBarColor};
+
 	private File theme_data;
 	private Context context;
 
@@ -81,6 +109,23 @@ public class ThemeUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 			Toast.makeText(context, "Unable to save changes", Toast.LENGTH_SHORT).show();
+		}
+		updateWallpaper(theme);
+	}
+
+	public void updateWallpaper(int theme){
+		WallpaperManager wallpaperManager = WallpaperManager.getInstance(context);
+		Bitmap bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+		Canvas canvas = new Canvas(bitmap);
+
+		@SuppressLint("Recycle") TypedArray typedArray = context.obtainStyledAttributes(theme, attrs);
+		@StyleableRes int i = 3;
+		canvas.drawColor(typedArray.getColor(i, Color.BLACK));
+
+		try {
+			wallpaperManager.setBitmap(bitmap);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
