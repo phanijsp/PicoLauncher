@@ -1,21 +1,28 @@
 package org.deltaverse.picolauncher;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
+
+import soup.neumorphism.NeumorphCardView;
 
 public class ThemeActivity extends AppCompatActivity {
 
 	GridView gridView;
 	ArrayList<ThemeObject> themeObjects;
 	ImageView backButton;
+	GridAdapter gridAdapter;
+	ThemeUtils themeUtils;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,9 +32,9 @@ public class ThemeActivity extends AppCompatActivity {
 		gridView = findViewById(R.id.grid_view);
 		backButton = findViewById(R.id.back_button);
 
-		ThemeUtils themeUtils = new ThemeUtils(getApplicationContext());
+		themeUtils = new ThemeUtils(getApplicationContext());
 		themeObjects = themeUtils.getThemes();
-		GridAdapter gridAdapter = new GridAdapter(getApplicationContext(), themeObjects, themeUtils.getTheme());
+		gridAdapter = new GridAdapter(getApplicationContext(), themeObjects, themeUtils.getTheme());
 		gridView.setAdapter(gridAdapter);
 		gridAdapter.notifyDataSetChanged();
 
@@ -47,8 +54,17 @@ public class ThemeActivity extends AppCompatActivity {
 		gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+				gridAdapter.updateTheme(themeObjects.get(position).getTheme());
+				gridAdapter.notifyDataSetChanged();
+				themeUtils.setTheme(themeObjects.get(position).getTheme());
 			}
 		});
+	}
+
+	@Override
+	public void onBackPressed() {
+		Intent i = new Intent(ThemeActivity.this, MainActivity.class);
+		startActivity(i);
+		finish();
 	}
 }

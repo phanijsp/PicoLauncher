@@ -11,13 +11,14 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -34,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
 	ConstraintLayout.LayoutParams params;
 	PackageManager packageManager;
 	EditText editText;
+	ImageView circle;
 	ArrayList<AppData> apps;
 	ArrayList<AppData> filtered_List;
 	ListView listView;
 	appList_Adapter adapter;
 	ThemeUtils themeUtils;
+	String TAG = "Here";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,18 +61,33 @@ public class MainActivity extends AppCompatActivity {
 		neumorphCardView = findViewById(R.id.neu);
 		editText = findViewById(R.id.edit_text);
 		listView = findViewById(R.id.apps_listview);
-
+		circle = findViewById(R.id.circle);
 
 		editTextTouchHandler();
 		editTextHandler();
 		listItemClickHandler();
 		root_layout_long_clickHandler();
+		circle_icon_clickHandler();
 	}
-	public void root_layout_long_clickHandler(){
+
+	public void circle_icon_clickHandler(){
+		circle.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				try {
+					startActivity(new Intent(Intent.ACTION_VOICE_COMMAND).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+				}catch (Exception e){
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	public void root_layout_long_clickHandler() {
 		root_layout.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View v) {
 				startActivity(new Intent(MainActivity.this, ThemeActivity.class));
+				finish();
 				return false;
 			}
 		});
@@ -190,7 +208,6 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onResume() {
-		setTheme(themeUtils.getTheme());
 		params = (ConstraintLayout.LayoutParams) neumorphCardView.getLayoutParams();
 		TransitionManager.beginDelayedTransition(root_layout);
 		Handler handler = new Handler();
@@ -203,8 +220,8 @@ public class MainActivity extends AppCompatActivity {
 				neumorphCardView.setLayoutParams(params);
 			}
 		}, 100);
-
 		super.onResume();
+		Log.i(TAG, "onResume: ");
 	}
 
 	@Override
@@ -212,20 +229,19 @@ public class MainActivity extends AppCompatActivity {
 		params.width = ConstraintLayout.LayoutParams.WRAP_CONTENT;
 		neumorphCardView.setLayoutParams(params);
 		neumorphCardView.setVisibility(View.INVISIBLE);
-
 		super.onPause();
-
+		Log.i(TAG, "onPause: ");
 	}
 
 	@Override
 	protected void onStart() {
-
+		Log.i(TAG, "onStart: ");
 		super.onStart();
 	}
 
 	@Override
 	protected void onDestroy() {
-
+		Log.i(TAG, "onDestroy: ");
 		super.onDestroy();
 	}
 }

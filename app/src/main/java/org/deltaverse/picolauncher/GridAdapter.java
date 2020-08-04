@@ -49,6 +49,9 @@ public class GridAdapter extends BaseAdapter {
 		return 0;
 	}
 
+	public void updateTheme(int CurrentTheme){
+		this.CurrentTheme = CurrentTheme;
+	}
 
 	@SuppressLint({"ViewHolder", "InflateParams"})
 	@Override
