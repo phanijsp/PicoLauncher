@@ -8,7 +8,11 @@
     android:layout_height="match_parent"
     android:background="?attr/background_color"
     tools:context=".MainActivity">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/help_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
 
 <soup.neumorphism.NeumorphCardView
     android:id="@+id/neu"

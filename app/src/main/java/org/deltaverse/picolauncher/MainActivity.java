@@ -4,10 +4,12 @@ import android.animation.LayoutTransition;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.transition.TransitionManager;
@@ -68,6 +70,21 @@ public class MainActivity extends AppCompatActivity {
 		listItemClickHandler();
 		root_layout_long_clickHandler();
 		circle_icon_clickHandler();
+		help_if_new();
+	}
+
+	public void help_if_new(){
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		boolean previouslyStarted = prefs.getBoolean(getString(R.string.pref_previously_started), false);
+		if(!previouslyStarted) {
+			SharedPreferences.Editor edit = prefs.edit();
+			edit.putBoolean(getString(R.string.pref_previously_started), Boolean.TRUE);
+			edit.apply();
+			show_help();
+		}
+	}
+	public void show_help(){
+
 	}
 
 	public void circle_icon_clickHandler(){
