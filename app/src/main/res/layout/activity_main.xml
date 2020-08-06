@@ -12,7 +12,40 @@
     android:id="@+id/help_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    />
+    android:visibility="gone"
+    >
+    <TextView
+        android:id="@+id/help_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        android:text="@string/long_press_any_where_on_the_screen_to_change_theme"
+        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+        android:textColor="#fff"
+        android:textAlignment="center"/>
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:neumorph_shadowColorLight="?attr/neu_light_color"
+        app:neumorph_shadowColorDark="?attr/neu_dark_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/help_textView"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/okayie"
+            android:textColor="#fff"
+            android:padding="12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            />
+    </soup.neumorphism.NeumorphCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 <soup.neumorphism.NeumorphCardView
     android:id="@+id/neu"

@@ -84,7 +84,14 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	public void show_help(){
-
+		final ConstraintLayout constraintLayout = findViewById(R.id.help_layout);
+		constraintLayout.setVisibility(View.VISIBLE);
+		constraintLayout.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				constraintLayout.setVisibility(View.GONE);
+			}
+		});
 	}
 
 	public void circle_icon_clickHandler(){
