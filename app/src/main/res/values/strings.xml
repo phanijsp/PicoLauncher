@@ -2,6 +2,6 @@
     <string name="app_name">Pico Launcher</string>
     <string name="select_your_theme">Select your theme</string>
     <string name="pref_previously_started">started?</string>
-    <string name="long_press_any_where_on_the_screen_to_change_theme">Long Press any where on the screen to change theme</string>
+    <string name="long_press_any_where_on_the_screen_to_change_theme">Long press any where on the screen to change theme</string>
     <string name="okayie">oKaYiE</string>
 </resources>
